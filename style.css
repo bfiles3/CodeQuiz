@@ -1,0 +1,15 @@
+body {
+    text-align: center;
+    font-family: "Lora", serif; 
+    background-image: url("https://i.pinimg.com/originals/1e/ef/c5/1eefc5567dc5c55f67ef6849b9235582.jpg");
+    color: white;
+}
+
+nav {
+    color: white;
+    background-color: rgb(59, 59, 59);
+}
+
+.nav-link {
+    color: white;
+}
