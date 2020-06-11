@@ -3,7 +3,7 @@
 
 <head>
     <title>Coding Basics Quiz</title>
-    <script src="script.js"></script>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
@@ -20,16 +20,27 @@
             <li class="nav-item">
               <a class="nav-link" href="highscore.html">High Scores</a>
             </li>
-        <a class="nav-link form-inline time">Timer:</a></ul>
+        <a class="nav-link form-inline">Timer: <span class="time"></span></a></ul>
     </nav><br/>
+    <br />
+    <div id="quiz"></div>
+    <br />
     <h2 id="progress"></h2>
-    <div id="quiz">
-        <label> <input type='radio' name='answers' value='A'> "A"</label><br>
-        <label> <input type='radio' name='answers' value='B'> "B"</label><br>
-        <label> <input type='radio' name='answers' value='C'> "C"</label><br><br>
-        <button onclick='checkAnswer()'>Submit Answer</button>
-    </div>
+    
+    <br />
+    <br />
+    <br />
+<div id = "submitscore">
+ <form class="form-group row 12">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="inputPassword2" class="sr-only">Password</label>
+          <input type="text" class="form-control" id="inputPassword2" placeholder="Initials">
+        </div>
+        <button type="submit" id = "subHS" class="btn-primary mb-2">Submit Score</button>
+      </form>  
+</div>
 
 
+    <script src="script.js"></script>
 </body>
 </html>

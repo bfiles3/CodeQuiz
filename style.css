@@ -13,3 +13,24 @@ nav {
 .nav-link {
     color: white;
 }
+
+.btn {
+    background-color: white;
+    color: black;
+
+}
+
+form {
+    color: black;
+    align-items: center;
+    display: none; 
+
+}
+
+.form-control-plaintext {
+    color: white;
+}
+
+#submitscore {
+    display: none;
+}
