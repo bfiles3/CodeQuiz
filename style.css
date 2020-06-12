@@ -22,15 +22,28 @@ nav {
 
 form {
     color: black;
-    align-items: center;
+    align-content: center;
     display: none; 
 
 }
 
-.form-control-plaintext {
-    color: white;
-}
 
 #submitscore {
     display: none;
+
+}
+
+#subHS {
+    background-color: white;
+    color: black;
+}
+
+#leaderboard {
+    display: none;
+}
+
+.list-group-item {
+    background-color:  rgb(59, 59, 59);
+    color: white;
+}
 }

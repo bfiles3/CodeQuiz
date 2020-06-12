@@ -20,7 +20,7 @@
             <li class="nav-item">
               <a class="nav-link" href="highscore.html">High Scores</a>
             </li>
-        <a class="nav-link form-inline">Timer: <span class="time"></span></a></ul>
+        <a class="nav-link form-inline"><span id="time"></span></a></ul>
     </nav><br/>
     <br />
     <div id="quiz"></div>
@@ -32,14 +32,20 @@
     <br />
 <div id = "submitscore">
  <form class="form-group row 12">
-        <div class="form-group mx-sm-3 mb-2">
+        <div class="form-group mx-sm-3 mb-2" id = "form">
           <label for="inputPassword2" class="sr-only">Password</label>
-          <input type="text" class="form-control" id="inputPassword2" placeholder="Initials">
+          <input type="text" class="form-control" id="userName" placeholder="Enter Name"></input>
         </div>
         <button type="submit" id = "subHS" class="btn-primary mb-2">Submit Score</button>
       </form>  
 </div>
 
+<ul class="list-group" id = "leaderboard">
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
 
     <script src="script.js"></script>
 </body>

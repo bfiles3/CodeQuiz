@@ -86,7 +86,6 @@ function checkAnswer() {
       
     progress++ 
         
-    console.log(progress)
     if (progress == questions.length) {
         showForm();
     }
@@ -102,13 +101,44 @@ for (var i = 0; i < buttons.length; i++) {
 
 function showForm() {
     document.getElementById("submitscore").style.display = "block";
+    document.getElementById("progress").innerHTML = "Final Score:" + " " + (correct * 10);
 };
 
 var subbut = document.getElementById("subHS");
 
+function createHighScore () {
+    var score = (correct * 10);
+    var name = document.getElementById("userName");
+    document.getElementById("form").addEventListener("submit", function(e){
+        e.preventDefault()
+    })
+    console.log(score, name)};
+
+
 subbut.addEventListener('click', function(event){
     event.preventDefault()
-    window.location = "highscore.html"
-    
+    //window.location = "highscore.html"
+    document.getElementById("quiz").innerHTML = "<h2> Leaderboard </h2>";
+    document.getElementById("submitscore").style.display = "none";
+    document.getElementById("progress").style.display="none";
+    document.getElementById("time").style.display="none";
+    document.getElementById("leaderboard").style.display="block";
+    createHighScore();
 })
-//timer here
+
+var secondsLeft = 60;
+var timeEl = document.getElementById("time");
+
+function startTimer() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = "Timer:" + " " + secondsLeft;
+
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      showForm();
+          }
+
+  }, 1000);
+
+}
