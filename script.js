@@ -105,14 +105,24 @@ function showForm() {
 };
 
 var subbut = document.getElementById("subHS");
+var name = document.getElementById("name");
+//var allScores = []; 
+var score = (correct * 10); 
 
 function createHighScore () {
-    var score = (correct * 10);
-    var name = document.getElementById("userName");
+    event.preventDefault();
+    var nameList = document.getElementById("name").value;
+    //allScores.unshift(score);
     document.getElementById("form").addEventListener("submit", function(e){
         e.preventDefault()
+        createList()
     })
-    console.log(score, name)};
+    console.log(nameList, score)
+   
+
+
+
+};
 
 
 subbut.addEventListener('click', function(event){
@@ -136,7 +146,6 @@ function startTimer() {
 
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
-      showForm();
           }
 
   }, 1000);
