@@ -79,17 +79,19 @@ function checkAnswer() {
             if (value == questions[progress].answer) {
                 correct++
             }
+        } else if (value != questions[progress].answer) {
+            secondsLeft -= 5;
         }
     }
     // changes position of which question user is on
-    if (progress < questions.length) 
-      
-    progress++ 
-        
+    if (progress < questions.length)
+
+        progress++
+
     if (progress == questions.length) {
         showForm();
     }
-    else {createQuiz()}  
+    else { createQuiz() }
     console.log(correct);
 
 };
@@ -105,34 +107,43 @@ function showForm() {
 };
 
 var subbut = document.getElementById("subHS");
-var name = document.getElementById("name");
-//var allScores = []; 
-var score = (correct * 10); 
 
-function createHighScore () {
+function createList() {
+    var hsName = JSON.parse(localStorage.getItem("name"));
+    var hsScore = JSON.parse(localStorage.getItem("score"));
+    document.querySelector("#one").textContent = hsName;
+    document.querySelector("#one").textContent = ": " + hsScore;
+};
+
+
+function createHighScore() {
     event.preventDefault();
+    var score = (correct * 10);
+    var scoreList = [];
+    scoreList.unshift(score);
     var nameList = document.getElementById("name").value;
-    //allScores.unshift(score);
-    document.getElementById("form").addEventListener("submit", function(e){
+    document.getElementById("form").addEventListener("submit", function (e) {
         e.preventDefault()
-        createList()
+        JSON.stringify(localStorage.setItem("name", nameList));
+        JSON.stringify(localStorage.setItem("score", scoreList));
+        createList();
     })
-    console.log(nameList, score)
-   
+    //console.log(nameList, score)
+
 
 
 
 };
 
 
-subbut.addEventListener('click', function(event){
+subbut.addEventListener('click', function (event) {
     event.preventDefault()
     //window.location = "highscore.html"
     document.getElementById("quiz").innerHTML = "<h2> Leaderboard </h2>";
     document.getElementById("submitscore").style.display = "none";
-    document.getElementById("progress").style.display="none";
-    document.getElementById("time").style.display="none";
-    document.getElementById("leaderboard").style.display="block";
+    document.getElementById("progress").style.display = "none";
+    document.getElementById("time").style.display = "none";
+    document.getElementById("leaderboard").style.display = "block";
     createHighScore();
 })
 
@@ -140,14 +151,14 @@ var secondsLeft = 60;
 var timeEl = document.getElementById("time");
 
 function startTimer() {
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = "Timer:" + " " + secondsLeft;
+    var timerInterval = setInterval(function () {
+        secondsLeft--;
+        timeEl.textContent = "Timer:" + " " + secondsLeft;
 
-    if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-          }
+        if (secondsLeft === 0) {
+            clearInterval(timerInterval);
+        }
 
-  }, 1000);
+    }, 1000);
 
 }
