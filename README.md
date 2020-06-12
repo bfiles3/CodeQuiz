@@ -1,1 +1,14 @@
 # CodeQuiz
+
+For this assignment, the task was to create a quiz based on JavaScript. In order to accomplish that, the first step was to create the HTML file where the quiz would be displayed. Within the HTML file I linked Bootstrap in order to create objects on the page like the navigation bar, input form, and leaderboard. I also added the necessary text for the timer. I created a separate HTML file to store the home page with rules and information about the quiz, as well as a button to take you to the quiz page.
+
+Following the creation of the HTML page, I created the CSS page to add styling. I added a background image on both the index (home) page, and the quiz page. I also added in a Google Font, and edited some of the coloring on the Bootstrap objects to match the page color scheme. I also edited some other elements of the Bootstrap coding during this step, such as the number of links on the navigation bar and their displayed text, and the text within the form to submit the name associated with your score. I made sure they all displayed properly to help the user easily navigate the quiz and the pages around it. 
+
+I pseduo-coded the outline of my JavaScript page first, and then got the large portions of the quiz out of the way first. I created the array that held all of my questions and their answers, I created a variable to move through the array from question to question, and I created some innerHTML content to display the radio objects for my possible answers. 
+
+Moving past the questions array, I created a function to check answers. I created an ID in the HTML so that the check answers function would grab the responses of the radio objects and compare them to see if they were correct. Below this is where I created the if statement that accomplished two things. First, it added points to your score for every correct answer. Then, it pushed the question forward to the question that followed. Secondly, the statement removed time from the timer every time a question was answered incorrectly. Finally, I created another if statement to make sure that the end of the quiz was defined with a function of what to do next.
+
+After clicking submit on the sixth and final question of the quiz, I created a function to display the form for you to input the name associated with your score, and gave you your final score. I then created a function to turn the list of names and scores to a string and store them to the local storage. I created another function to parse them and display them to the leaderboard. Another function of the submit button was to hide all the elements of the quiz, and display the leaderboard and list of scores/names. 
+
+The last element of my code was the code to display my timer. It set the length of the quiz, which was one minute, called upon the HTML element where it was to be displayed (for me, in the navigation bar) and then ran a function to count down the time from 60 seconds, afer the quiz had loaded.
+
